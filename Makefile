@@ -6,8 +6,8 @@ test:
 	echo "Not implemented yet"
 	#python -m pytest -vv test_*.py
 
-format:	
-	black *.py awstools/*.py codewhisper/*.py copilot/*.py
+format:
+	black *.py hlib/*.py 
 
 lint:
 	pylint --disable=R,C --ignore-patterns=test_.*?py *.py awstools/*.py codewhisper/*.py copilot/*.py
