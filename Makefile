@@ -4,7 +4,7 @@ install:
 
 test:
 	echo "Not implemented yet"
-	#python -m pytest -vv test_*.py
+	python -m pytest -vv test_*.py
 
 format:
 	black *.py hlib/*.py 
