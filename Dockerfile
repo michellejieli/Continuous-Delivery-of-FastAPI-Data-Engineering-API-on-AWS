@@ -1,4 +1,5 @@
 FROM alpine:latest
 RUN apk update && apk add bash
 
-WORKDIR / app
+WORKDIR /app
+COPY main.py /app
