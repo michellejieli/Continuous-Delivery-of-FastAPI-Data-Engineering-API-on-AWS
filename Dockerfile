@@ -1,12 +1,9 @@
-FROM alpine:latest
-RUN apk update && apk add bash
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
 
-RUN mkdir -p /app
-WORKDIR /app
-COPY main.py requirements.txt /app/
+WORKDIR /code
 
-RUN pip install -r requirements.txt
+COPY . ./
 
-EXPOSE 8080
-CMD [ "main.py" ]
-ENTRYPOINT [ "python" ]
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+CMD ["python", "./main.py"]
