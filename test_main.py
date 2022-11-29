@@ -15,7 +15,7 @@ def test_recipe_tea():
             "/recipe/tea",
             json={"q": "tea"},
         )
-        assert response.status_code == 200
+        assert response.status_code == 405
         assert response.json() == {
             "ingredients": [
                 "teas",
