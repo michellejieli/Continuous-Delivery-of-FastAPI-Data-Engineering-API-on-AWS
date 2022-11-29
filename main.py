@@ -8,7 +8,7 @@ app = FastAPI()
 @app.get("/")
 async def root():
     """This is the root of the API"""
-    return {"message": "Need recipe ideas?"}
+    return {"message": "Generate recipe ideas"}
 
 
 @app.get("/recipe/{recipe}")
