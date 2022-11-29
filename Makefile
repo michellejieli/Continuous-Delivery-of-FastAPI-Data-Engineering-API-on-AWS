@@ -11,7 +11,7 @@ format:
 	#hlib/*.py 
 
 lint:
-	pylint --disable=R,C --ignore-patterns=test_.*?py *.py awstools/*.py codewhisper/*.py copilot/*.py
+	pylint --disable=R,C --ignore-patterns=test_.*?py *.py 
 
 refactor: format lint
 

@@ -9,6 +9,6 @@ headers = {
 	"X-RapidAPI-Host": "yummly2.p.rapidapi.com"
 }
 
-response = requests.request("GET", url, headers=headers, params=querystring)
+response = requests.request("GET", url, headers=headers, params=querystring, timeout=5)
 
 print(response.text)
