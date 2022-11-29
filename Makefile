@@ -3,15 +3,13 @@ install:
 		pip install -r requirements.txt
 
 test:
-	echo "Not implemented yet"
-	python -m pytest -vv test_*.py
+	python -m pytest -vv --cov=main --cov=logic test_*.py
 
 format:
 	black *.py 
-	#hlib/*.py 
 
 lint:
-	pylint --disable=R,C --ignore-patterns=test_.*?py *.py 
+	pylint --disable=R,C *.py
 
 refactor: format lint
 
@@ -20,4 +18,5 @@ deploy:
 	docker build -t recipe_ideas .
 	docker tag recipe_ideas:latest 681238067355.dkr.ecr.us-east-1.amazonaws.com/recipe_ideas:proj4
 	docker push 681238067355.dkr.ecr.us-east-1.amazonaws.com/recipe_ideas:proj4
-all: install lint test
+
+all: install lint test deploy
