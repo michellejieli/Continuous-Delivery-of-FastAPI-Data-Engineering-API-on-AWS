@@ -12,7 +12,7 @@ def test_root():
 def test_recipe_avocado():
     with TestClient(app) as client:
         response = client.get("/recipe/avocado")
-        assert response.status_code == 405
+        assert response.status_code == 200
         assert response.json() == {
             "ingredients": [
                 "avocado",
