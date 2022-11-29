@@ -1,4 +1,4 @@
-# Project 4 -  Continuous Delivery of Flask/FastAPI Data Engineering API on AWS
+# Project 4 -  Continuous Delivery of FastAPI Data Engineering API on AWS
 
 ## Key Objectives
 
