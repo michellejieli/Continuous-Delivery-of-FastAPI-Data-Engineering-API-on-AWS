@@ -2,7 +2,7 @@
 
 ## Key Objectives
 
-I built a microservice that suggests a recipe idea when you query a food or ingredient. The data comes from [Yummly API](https://rapidapi.com/apidojo/api/yummly2). The JSON payload will result in a dictionary containing 2 keys - ingredients and searhes. The value for for ingredients is a list of food items containing the queried ingredient and the value for the searches is a list of recipes containing the queried ingredient. 
+I built a microservice that suggests a recipe idea when a user queries a food or ingredient. The data comes from [Yummly API](https://rapidapi.com/apidojo/api/yummly2). The output will is a dictionary containing 2 keys - ingredients and searhes. The value for for ingredients is a list of food items containing the queried ingredient and the value for the searches is a list of recipes containing the queried ingredient. I enabled continuous delivery using AWS.
 
 ## Workflow Diagram
 ![ML_proj_4 (1)](https://user-images.githubusercontent.com/70456530/204614296-dd8fb125-8a05-40f2-8f89-e15c864ce0e5.png)
