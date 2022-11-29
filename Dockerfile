@@ -1,11 +1,9 @@
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
+FROM public.ecr.aws/lambda/python:3.9
 
-WORKDIR /code
-
-COPY . ./
-
+RUN mkdir -p /app
+COPY . main.py /app/
+WORKDIR /app
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-
+EXPOSE 8080
 CMD ["main.py"]
-
 ENTRYPOINT [ "python" ]
