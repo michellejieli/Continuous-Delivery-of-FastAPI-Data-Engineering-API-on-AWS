@@ -23,3 +23,6 @@ I built a microservice that suggests a recipe idea when you query a food or ingr
 
 ### 4. Perform continuous delivery using AWS CodeBuild.
 * Create build project and choose Github project for source. 
+
+
+'{'ingredients': ['avocado', 'avocados', 'avocado oil', 'hass avocados', 'hass avocado', 'ripe avocados', 'large avocados', 'medium avocado', 'haas avocados', 'california avocado', 'california avocados', 'small avocados', 'small avocado', 'fresh avocado', 'avocado leaves', 'florida avocado', 'fresh california avocado, ripe', 'fresh california avocados, ripe', 'fresh california avocados', 'large california avocados', 'large california avocado', 'olivado avocado oil', 'fresh california avocado', 'baby avocados', 'wholly avocado', 'la tourangelle avocado oil', 'mission avocados', 'california haas avocados', 'fuerte avocado', 'jumbo avocado', 'farm rich avocado slices', 'hidden valley® original ranch® avocado dressing', 'spectrum avocado oil'], 'searches': ['avocado', 'avocado salad', 'chicken avocado', 'avocado sauce', 'avocado tomato', 'avocado sandwich', 'avocado low carb', 'avocado onion tomato dip', 'cold avocado soup', 'avocado artichoke']}'
