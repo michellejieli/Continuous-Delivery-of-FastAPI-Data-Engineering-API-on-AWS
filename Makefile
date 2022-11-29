@@ -18,6 +18,6 @@ refactor: format lint
 deploy:
 	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681238067355.dkr.ecr.us-east-1.amazonaws.com
 	docker build -t recipe_ideas .
-	docker tag recipe_ideas:latest 681238067355.dkr.ecr.us-east-1.amazonaws.com/recipe_ideas:latest
-	docker push 681238067355.dkr.ecr.us-east-1.amazonaws.com/recipe_ideas:latest
+	docker tag recipe_ideas:latest 681238067355.dkr.ecr.us-east-1.amazonaws.com/recipe_ideas:proj4
+	docker push 681238067355.dkr.ecr.us-east-1.amazonaws.com/recipe_ideas:proj4
 all: install lint test
