@@ -9,10 +9,8 @@ headers = {
     "X-RapidAPI-Host": "tasty.p.rapidapi.com",
 }
 
-response = requests.request("GET", url, headers=headers, params=querystring)
+response = requests.request("GET", url, headers=headers, params=querystring, timeout=15)
 
-try:
-    data = response.json()
-    print(data)
-except:
-    print("fail")
+
+data = response.json()
+print(data)
