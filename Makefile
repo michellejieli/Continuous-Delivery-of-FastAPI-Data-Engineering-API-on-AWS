@@ -19,4 +19,4 @@ deploy:
 	docker tag recipe_ideas:latest 681238067355.dkr.ecr.us-east-1.amazonaws.com/recipe_ideas:latest
 	docker push 681238067355.dkr.ecr.us-east-1.amazonaws.com/recipe_ideas:latest
 
-all: install lint test deploy
+all: install lint test format deploy
