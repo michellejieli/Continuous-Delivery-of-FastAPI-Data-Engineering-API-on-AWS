@@ -9,15 +9,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: test build-Build and run dev container task
-      uses: devcontainers/ci@v0.2
-      with:
-        runCmd: |
-          make install
-          make lint
-          make test
-          make format  
+      - uses: actions/checkout@v3
+      - name: Install
+        run: make install
+      - name: Lint
+        run: make lint
+      - name: Test
+        run: make test
+      - name: Format
+        run: make format
 
 
 
