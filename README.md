@@ -2,14 +2,14 @@
 
 ## Key Objectives
 
-I built a microservice that suggests a recipe idea when a user queries a food or ingredient. The data comes from [Yummly API](https://rapidapi.com/apidojo/api/yummly2). The output will is a dictionary containing 2 keys - ingredients and searhes. The value for for ingredients is a list of food items containing the queried ingredient and the value for the searches is a list of recipes containing the queried ingredient. I enabled continuous delivery using AWS.
+I built a microservice that suggests a recipe idea when a user queries a food or ingredient. The data comes from [Tasty API](https://rapidapi.com/apidojo/api/tasty/). The output will is a dictionary containing recipe ideas with the food name. I enabled continuous delivery using AWS App Runner and CodeBuild.
 
 ## Workflow Diagram
-![ML_proj_4 (1)](https://user-images.githubusercontent.com/70456530/204614296-dd8fb125-8a05-40f2-8f89-e15c864ce0e5.png)
+![workflow](workflow.png)
 
 ## Workflow Steps 
 
-### 1. Create Python script leveraging [Yummly API](https://rapidapi.com/apidojo/api/yummly2) and FastAPI.
+### 1. Create Python script leveraging [Tasty API](https://rapidapi.com/apidojo/api/tasty/) and FastAPI.
 * Store data as a JSON object.
 * Display web API using FastAPI. 
 
@@ -17,9 +17,11 @@ I built a microservice that suggests a recipe idea when a user queries a food or
 * Copy Github repo in AWS Cloud9 environment.
 * Create image in ECR.
 * In Cloud9 terminal, use commands from 'View push commands' in ECR to push FastAPI to ECR. 
+* To containerize FastAPI, build image and tag locally with `docker build . -t recipe_ideas` and `docker run -p 127.0.0.1:8080:8080 649c6b7d1d61`
 
 ### 3. Deploy containerized API using AWS App Runner.
-* Create service and choose image for source.
+* Create new IAM role for AWS service and CodeBuild (search for admin and select "provides full access to AWS services and resources"). 
+* Create service in App Runner and choose image for source.
 
 ### 4. Perform continuous delivery using AWS CodeBuild.
 * Create build project and choose Github project for source. 
@@ -29,4 +31,4 @@ I built a microservice that suggests a recipe idea when a user queries a food or
 /recipe/avocado
 
 ### Output: 
-`{'ingredients': ['avocado', 'avocados', 'avocado oil', 'hass avocados', 'hass avocado', 'ripe avocados', 'large avocados', 'medium avocado', 'haas avocados', 'california avocado', 'california avocados', 'small avocados', 'small avocado', 'fresh avocado', 'avocado leaves', 'florida avocado', 'fresh california avocado, ripe', 'fresh california avocados, ripe', 'fresh california avocados', 'large california avocados', 'large california avocado', 'olivado avocado oil', 'fresh california avocado', 'baby avocados', 'wholly avocado', 'la tourangelle avocado oil', 'mission avocados', 'california haas avocados', 'fuerte avocado', 'jumbo avocado', 'farm rich avocado slices', 'hidden valley® original ranch® avocado dressing', 'spectrum avocado oil'], 'searches': ['avocado', 'avocado salad', 'chicken avocado', 'avocado sauce', 'avocado tomato', 'avocado sandwich', 'avocado low carb', 'avocado onion tomato dip', 'cold avocado soup', 'avocado artichoke']}'`
+`{'results': [{'display': 'avocado', 'search_value': 'avocado', 'type': 'ingredient'}, {'search_value': 'avocado toast', 'type': 'ingredient', 'display': 'avocado toast'}]}`
