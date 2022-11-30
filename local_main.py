@@ -1,14 +1,18 @@
 import requests
 
-url = "https://yummly2.p.rapidapi.com/feeds/auto-complete"
+url = "https://tasty.p.rapidapi.com/recipes/auto-complete"
 
-querystring = {"q": "avocado"}
+querystring = {"prefix": "avocado"}
 
 headers = {
     "X-RapidAPI-Key": "bd3adcf9d4msh6039b415026aa9dp14de35jsn843f232228bb",
-    "X-RapidAPI-Host": "yummly2.p.rapidapi.com",
+    "X-RapidAPI-Host": "tasty.p.rapidapi.com",
 }
 
-response = requests.request("GET", url, headers=headers, params=querystring, timeout=5)
+response = requests.request("GET", url, headers=headers, params=querystring)
 
-print(response.json())
+try:
+    data = response.json()
+    print(data)
+except:
+    print("fail")
