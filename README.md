@@ -12,13 +12,13 @@ I built a microservice that suggests a recipe idea when a user queries a food or
 ### 1. Create Python script leveraging [Tasty API](https://rapidapi.com/apidojo/api/tasty/) and FastAPI.
 * Store data as a JSON object.
 * Display web API using FastAPI. 
+* `uvicorn main:app --host 0.0.0.0 --port 8888` to view FastAPI locally 
 
 ### 2. Containerize FastAPI and push to AWS ECR 
+* To containerize FastAPI, build image and tag locally with `docker build .` 
 * Copy Github repo in AWS Cloud9 environment.
 * Create image in ECR.
 * In Cloud9 terminal, use commands from 'View push commands' in ECR to push FastAPI to ECR. 
-* To containerize FastAPI, build image and tag locally with `docker build . -t recipe_ideas` and `docker run -p 127.0.0.1:8080:8080 649c6b7d1d61`
-
 ### 3. Deploy containerized API using AWS App Runner.
 * Create new IAM role for AWS service and CodeBuild (search for admin and select "provides full access to AWS services and resources"). 
 * Create service in App Runner and choose image for source.
