@@ -19,7 +19,7 @@ async def get_recipe(recipe: str):
     querystring = {"prefix": recipe}
     api_key = "bd3adcf9d4msh6039b415026aa9dp14de35jsn843f232228bb"
     headers = {
-        "X-RapidAPI-Key": "bd3adcf9d4msh6039b415026aa9dp14de35jsn843f232228bb",
+        "X-RapidAPI-Key": api_key,
         "X-RapidAPI-Host": "tasty.p.rapidapi.com",
     }
     response = requests.request(
